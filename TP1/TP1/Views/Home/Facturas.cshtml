@@ -1,0 +1,9 @@
+﻿@model TP1.Models
+
+@{
+    ViewBag.Title = (.id > 0 ? Model.Nombre + " " + Model.Apellido : "Nuevo registro");
+    List<Model.Curso> cursos = ViewBag.Cursos;
+}
+
+<h2>Facturas</h2>
+
