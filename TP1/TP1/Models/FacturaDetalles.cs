@@ -16,7 +16,6 @@ namespace TP1.Models
 
         Contexto db = new Contexto();
 
-        List<Articulos> articulos = new List<Articulos>();
         public IEnumerable<SelectListItem> ArtItems
         {
             get
@@ -24,11 +23,16 @@ namespace TP1.Models
                 var allArticulos = db.Articulos.ToList().Select(f => new SelectListItem
                 {
                     Value = f.Id.ToString(),
-                    Text = f.Codigo
+                    Text = f.Descripcion
                 });
                 return allArticulos;
 
             }
         }
+
+        public virtual Factura Factura { get; set; }
+        public virtual Articulos Articulos { get; set; }
     }
+
+    
 }

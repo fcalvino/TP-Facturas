@@ -12,17 +12,7 @@ namespace TP1.Models
         public DateTime Fecha { get; set; }
         public string NombreCliente { get; set; }
         public List<FacturaDetalles> Detalle { get; set; }
-        public double Total {
-            get
-            {
-                var total = 0.0;
-                foreach (var linea in this.Detalle)
-                {
-                    total += linea.Precio * linea.Cantidad;
-                }
-                return total;
-            }
-        }
+        public double Total {get; set;}
 
         public Factura()
         {

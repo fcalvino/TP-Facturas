@@ -10,6 +10,7 @@ namespace TP1.Controllers
     public class Facturas1Controller : Controller
     {
         private Contexto db = new Contexto();
+        public FactArt fd = new FactArt();
 
         // GET: Facturas1
         public ActionResult Index()
@@ -22,7 +23,7 @@ namespace TP1.Controllers
         public ActionResult Create()
         {
             FactArt fd = new FactArt();
-            return View();
+            return View(fd);
         }
 
         [HttpPost]
@@ -42,7 +43,7 @@ namespace TP1.Controllers
                     }
                     db.SaveChanges();
                     }
-                    return RedirectToAction("Index");
+                    return Content("OK");
                 }
             else
             {
