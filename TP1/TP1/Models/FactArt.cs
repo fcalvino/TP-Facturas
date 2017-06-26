@@ -14,7 +14,9 @@ namespace TP1.Models
 
         public FactArt()
         {
-            this.facturadetalle = new FacturaDetalles();
+            facturadetalle = new FacturaDetalles();
+            factura = new Factura();
+            articulos = new Articulos();
         }
     }
 

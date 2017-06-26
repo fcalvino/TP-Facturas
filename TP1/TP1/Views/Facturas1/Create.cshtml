@@ -47,8 +47,15 @@
                     <th>Precio</th>
                     <th>Cantidad</th>
                     <th>Articulo</th>
-                    <th>Accion</th>
                 </tr>
+                     @foreach (var item in Model.factura.Detalle)
+                {
+                    <tr data-item='{"Id": @item.Id, "Cantidad": @item.Cantidad, "Precio": @item.Precio, "ArticleId": @item.Articuloid, "FacturaId": @item.Facturaid}'>
+                        <td class="col-md-3">@item.Precio</td>
+                        <td class="col-md-3">@item.Cantidad</td>
+                        <td class="col-md-3">@item.Articulos.Descripcion</td>
+                    </tr>
+                }
             </table>
 
                 <div class="row">
@@ -63,12 +70,13 @@
                     <div>
                         <label>Articulo</label>
                         <br />
-                            @Html.DropDownListFor(m => m.facturadetalle.Articuloid, Model.facturadetalle.ArtItems)
-                            @Html.ValidationMessageFor(m => m.facturadetalle.Articuloid)
+                        <select class="form-control" name="articulo">
+                            <option>Seleccione un articulo</option>
+                        </select>
                         </div>
                     <div>
                         <br />
-                        <button id="agregaLinea" class="agregar btn btn-warning disabled">Agregar Item</button>
+                        <button id="agregaLinea" class="agregar btn btn-warning ">Agregar Item</button>
                     </div>
                 </div>
             </div>
@@ -78,7 +86,7 @@
         <input type="submit" value="Crear" class="btn btn-default" />
     </div>
 </div>
-        </div>
+</div>
 }
 
 <div>

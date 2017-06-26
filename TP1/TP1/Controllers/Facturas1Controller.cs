@@ -35,7 +35,8 @@ namespace TP1.Controllers
                 db.Facturas.Add(factura);
                 db.SaveChanges();
 
-                if (detalle != null)
+               
+               if (detalle != null)
                 {
                     foreach (FacturaDetalles linea in detalle)
                     {
@@ -43,8 +44,8 @@ namespace TP1.Controllers
                     }
                     db.SaveChanges();
                     }
-                    return Content("OK");
-                }
+                return RedirectToAction("Index");
+            }
             else
             {
                 return Json(ModelState.Values.SelectMany(v => v.Errors));

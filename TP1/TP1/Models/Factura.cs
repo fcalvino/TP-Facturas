@@ -11,7 +11,7 @@ namespace TP1.Models
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
         public string NombreCliente { get; set; }
-        public List<FacturaDetalles> Detalle { get; set; }
+        public virtual List<FacturaDetalles> Detalle { get; set; }
         public double Total {get; set;}
 
         public Factura()
